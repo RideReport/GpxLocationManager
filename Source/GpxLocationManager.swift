@@ -160,7 +160,7 @@ open class GpxLocationManager {
                                 
                             })
                         }
-                        if !self.isMonotiringSignficiantLocationChanges {
+                        if self.isMonotiringSignficiantLocationChanges {
                             if let lastLocation = self.lastDeleiveredSignificantLocationUpdate, lastLocation.distance(from: currentLocation) < self.minimumSignficiantLocationUpdateDistnace {
                                 // skip this location
                             } else {
