@@ -220,6 +220,24 @@ open class LocationManager {
         }
     }
     
+    open func startMonitoringVisits() {
+        switch locationManagerType {
+        case .gpx:
+            gpxLocationManager.startMonitoringVisits()
+        case .coreLocation:
+            cLLocationManager.startMonitoringVisits()
+        }
+    }
+    
+    open func stopMonitoringVisits() {
+        switch locationManagerType {
+        case .gpx:
+            gpxLocationManager.stopMonitoringVisits()
+        case .coreLocation:
+            cLLocationManager.stopMonitoringVisits()
+        }
+    }
+    
     open func allowDeferredLocationUpdates(untilTraveled distance: CLLocationDistance, timeout: TimeInterval) {
         switch locationManagerType {
         case .gpx:
