@@ -290,6 +290,7 @@ open class LocationManager {
         case .gpx:
             gpxLocationManager.startMonitoringSignificantLocationChanges()
         case .coreLocation:
+            cLLocationManager.stopMonitoringSignificantLocationChanges()
             cLLocationManager.startMonitoringSignificantLocationChanges()
         }
     }
