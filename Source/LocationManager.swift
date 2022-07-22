@@ -153,6 +153,14 @@ open class LocationManager {
             cLLocationManager.requestAlwaysAuthorization()
         }
     }
+    open func requestWhenInUseAuthorization() {
+        switch locationManagerType {
+        case .gpx:
+            gpxLocationManager.requestWhenInUseAuthorization()
+        case .coreLocation:
+            cLLocationManager.requestWhenInUseAuthorization()
+        }
+    }
     open var secondLength: Double {
         get {
             switch locationManagerType {
